@@ -84,7 +84,7 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 *Hᴇʟʟᴏ {} * [!]({})
 ───────────────────────
-× *I'ᴍ Aɴɪᴍᴇ-Tʜᴇᴍᴇ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
+× *I'ᴍ A Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
 × *I'ᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Fᴇᴀᴛᴜʀᴇꜱ!*
 ───────────────────────
 × *Uᴘᴛɪᴍᴇ:* `{}`
@@ -93,7 +93,7 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="❓ 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙃𝙚𝙡𝙥 ❗️", callback_data="tiana_"),
+        InlineKeyboardButton(text="❓ 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙃𝙚𝙡𝙥 ❗️", callback_data="Surya_"),
     ],
     [
         InlineKeyboardButton(text="👩‍💻 𝙄𝙣𝙛𝙤", callback_data="about_"),
@@ -106,12 +106,18 @@ buttons = [
     [  
         InlineKeyboardButton(text="➕️ 𝘼𝙙𝙙 𝙢𝙚 𝙩𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
     ], 
+        [  
+        InlineKeyboardButton(text="💙 𝗖𝗵𝗮𝘁𝘁𝗶𝗻𝗴 𝗛𝘂𝗯 💙️", url=f"https://t.me/FRIENDS4EVERCHAT"),
+    ], 
     
+        [  
+        InlineKeyboardButton(text="💫 𝗦𝘂𝗿𝘆𝗮 𝗠𝘂𝘀𝗶𝗰 𝗕𝗼𝘁 💫", url=f"https://t.me/Surya_MusicBot?startgroup=true"),
+    ], 
 ]
 
-TIANA_IMG = f"{START_IMG}"
-TIANA_VIDA = f"{BOT_TUT}"
-TIANA_VIDB = f"{MUSICBOT_TUT}"
+Surya_IMG = f"{START_IMG}"
+Surya_VIDA = f"{BOT_TUT}"
+Surya_VIDB = f"{MUSICBOT_TUT}"
 
 HELP_STRINGS = """*Click on the Buttons Bellow to get Documention about Specific Modules*"""
 
@@ -126,7 +132,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Tianabot.modules." + module_name)
+    imported_module = importlib.import_module("Suryabot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -233,7 +239,7 @@ def start(update: Update, context: CallbackContext):
     else:
           first_name = update.effective_user.first_name
           update.effective_message.reply_photo(
-                TIANA_IMG, caption="""*Hᴇʟʟᴏ {} !*
+                Surya_IMG, caption="""*Hᴇʟʟᴏ {} !*
 ───────────────────
 × *I'ᴍ Aɴɪᴍᴇ-Tʜᴇᴍᴇ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
 × *I'ᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Fᴇᴀᴛᴜʀᴇꜱ!*
@@ -247,7 +253,6 @@ def start(update: Update, context: CallbackContext):
                     sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(
                  [
-                  [InlineKeyboardButton(text="📄 Source", url="https://github.com/prince-botz/tianabot"), 
                    InlineKeyboardButton(text="🫂 Support", url=f"https://t.me/{SUPPORT_CHAT}")]
                  ]
               ),
@@ -357,9 +362,9 @@ def help_button(update, context):
 
 
 @run_async
-def tiana_callback_handler(update, context):
+def Surya_callback_handler(update, context):
     query = update.callback_query
-    if query.data == "tiana_":
+    if query.data == "Surya_":
         query.message.edit_text(
             text="""𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪. 
 ────────────────────────
@@ -371,14 +376,14 @@ def tiana_callback_handler(update, context):
                     [
                      InlineKeyboardButton(text="➕ 𝘼𝙡𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ➕", callback_data="help_back"),
                     ],                           
-                    [InlineKeyboardButton(text="𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 ❓", callback_data="tiana_help"),
-                     InlineKeyboardButton(text="𝙈𝙪𝙨𝙞𝙘 𝘽𝙤𝙩 🎧", callback_data="tiana_music")],
-                    [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_back"),
+                    [InlineKeyboardButton(text="𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 ❓", callback_data="Surya_help"),
+                     InlineKeyboardButton(text="𝙈𝙪𝙨𝙞𝙘 𝘽𝙤𝙩 🎧", callback_data="Surya_music")],
+                    [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_back"),
                      InlineKeyboardButton(text="𝙄𝙣𝙡𝙞𝙣𝙚 🔗", switch_inline_query_current_chat="")],
                 ]
             ),
         )
-    elif query.data == "tiana_back":
+    elif query.data == "Surya_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -393,21 +398,21 @@ def tiana_callback_handler(update, context):
                 timeout=60,
                 disable_web_page_preview=False,
         )
-    elif query.data == "tiana_help":
+    elif query.data == "Surya_help":
         query.message.edit_text(
             text=f"""*Nᴇᴡ  Tᴏ  {BOT_NAME}!  Hᴇʀᴇ  Is  Tʜᴇ  Qᴜɪᴄᴋ  Sᴛᴀʀᴛ  Gᴜɪᴅᴇ  Wʜɪᴄʜ  Wɪʟʟ  Hᴇʟᴘ  Yᴏᴜ  Tᴏ  Uɴᴅᴇʀsᴛᴀɴᴅ  Wʜᴀᴛ  Is  {BOT_NAME}  Aɴᴅ  Hᴏᴡ  Tᴏ  Usᴇ  Iᴛ.
 
 Cʟɪᴄᴋ  Bᴇʟᴏᴡ  Bᴜᴛᴛᴏɴ  Tᴏ  Aᴅᴅ  Bᴏᴛ  Iɴ  Yᴏᴜʀ  Gʀᴏᴜᴘ. Bᴀsɪᴄ  Tᴏᴜʀ  Sᴛᴀʀᴛᴇᴅ  Tᴏ  Kɴᴏᴡ  Aʙᴏᴜᴛ  Hᴏᴡ  Tᴏ  Usᴇ  Mᴇ*""",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-              [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="tiana_vida")],
+              [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="Surya_vida")],
                [InlineKeyboardButton(text="➕️ 𝘼𝙙𝙙 𝙢𝙚 𝙩𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],       
-                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_"),
-                 InlineKeyboardButton(text="➡️", callback_data="tiana_helpa")]
+                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_"),
+                 InlineKeyboardButton(text="➡️", callback_data="Surya_helpa")]
               ]
             ),
         )
-    elif query.data == "tiana_helpa":
+    elif query.data == "Surya_helpa":
         query.message.edit_text(
             text=f"""<b>Hᴇʏ,  Wᴇʟᴄᴏᴍᴇ  Tᴏ  Cᴏɴғɪɢᴜʀᴀᴛɪᴏɴ  Tᴜᴛᴏʀɪᴀʟ
 
@@ -417,12 +422,12 @@ Bᴇғᴏʀᴇ  Wᴇ  Gᴏ,  I  Nᴇᴇᴅ  Aᴅᴍɪɴ  Pᴇʀᴍɪssɪᴏɴs  
 3). Gɪᴠɪɴɢ  Fᴜʟʟ  Pᴇʀᴍɪssɪᴏɴs  Mᴀᴋᴇ  Tɪᴀɴᴀ  Fᴜʟʟʏ  Usᴇғᴜʟ</b>""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-              [[InlineKeyboardButton(text="⬅️", callback_data="tiana_help"),
-                InlineKeyboardButton(text="➡️", callback_data="tiana_helpb")],               
+              [[InlineKeyboardButton(text="⬅️", callback_data="Surya_help"),
+                InlineKeyboardButton(text="➡️", callback_data="Surya_helpb")],               
               ]
             ),
         )
-    elif query.data == "tiana_helpb":
+    elif query.data == "Surya_helpb":
         query.message.edit_text(
             text="""*Cᴏɴɢʀᴀɢᴜʟᴀᴛɪᴏɴs,  Tʜɪꜱ  Bᴏᴛ  Nᴏᴡ  Rᴇᴀᴅʏ  Tᴏ  Mᴀɴᴀɢᴇ  Yᴏᴜʀ  Gʀᴏᴜᴘ
 
@@ -441,12 +446,12 @@ Rᴇғᴇʀ  Hᴇʟᴘ  Mᴇɴᴜ  Tᴏ  Sᴇᴇ  Eᴠᴇʀʏᴛʜɪɴɢ  Iɴ  D
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
               [
-                [InlineKeyboardButton(text="⬅️", callback_data="tiana_helpa"),
-                 InlineKeyboardButton(text="➡️", callback_data="tiana_helpc")]
+                [InlineKeyboardButton(text="⬅️", callback_data="Surya_helpa"),
+                 InlineKeyboardButton(text="➡️", callback_data="Surya_helpc")]
                 ]
             ),
         )
-    elif query.data == "tiana_helpc":
+    elif query.data == "Surya_helpc":
         query.message.edit_text(
             text="""*× Fɪʟᴛᴇʀs
 ғɪʟᴛᴇʀs  ᴄᴀɴ  ʙᴇ  ᴜsᴇᴅ  ᴀs  ᴀᴜᴛᴏᴍᴀᴛᴇᴅ  ʀᴇᴘʟɪᴇs/ʙᴀɴ/ᴅᴇʟᴇᴛᴇ  ᴡʜᴇɴ  sᴏᴍᴇᴏɴᴇ  ᴜsᴇ  ᴀ  ᴡᴏʀᴅ  ᴏʀ  sᴇɴᴛᴇɴᴄᴇ
@@ -462,12 +467,12 @@ Sᴇɴᴅ  /chatbot  Oɴ  Aɴᴅ  Rᴇᴘʟʏ  Tᴏ  Aɴʏ  Oғ  Mʏ  Mᴇssᴀ�
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
               [
-                [InlineKeyboardButton(text="⬅️", callback_data="tiana_helpb"),
-                 InlineKeyboardButton(text="➡️", callback_data="tiana_helpd")]
+                [InlineKeyboardButton(text="⬅️", callback_data="Surya_helpb"),
+                 InlineKeyboardButton(text="➡️", callback_data="Surya_helpd")]
                 ]
             ),
         )
-    elif query.data == "tiana_helpd":
+    elif query.data == "Surya_helpd":
         query.message.edit_text(
             text="""*× Sᴇᴛᴛɪɴɢ  Uᴘ  Nᴏᴛᴇs
 ʏᴏᴜ  ᴄᴀɴ  sᴀᴠᴇ  ᴍᴇssᴀɢᴇ/ᴍᴇᴅɪᴀ/ᴀᴜᴅɪᴏ  ᴏʀ  ᴀɴʏᴛʜɪɴɢ  ᴀs  ɴᴏᴛᴇs ᴜsɪɴɢ /notes
@@ -482,12 +487,12 @@ Nᴏᴛᴇ-  ɴɪɢʜᴛ  ᴍᴏᴅᴇ  ᴄʜᴀᴛs  ɢᴇᴛ  ᴀᴜᴛᴏᴍ�
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
               [
-                [InlineKeyboardButton(text="⬅️", callback_data="tiana_helpc"),
-                 InlineKeyboardButton(text="➡️", callback_data="tiana_helpe")]
+                [InlineKeyboardButton(text="⬅️", callback_data="Surya_helpc"),
+                 InlineKeyboardButton(text="➡️", callback_data="Surya_helpe")]
                 ]
             ),
         )
-    elif query.data == "tiana_term":
+    elif query.data == "Surya_term":
         query.message.edit_text(
             text=f"""✗ *Terms and Conditions:*
 
@@ -507,7 +512,7 @@ Nᴏᴛᴇ-  ɴɪɢʜᴛ  ᴍᴏᴅᴇ  ᴄʜᴀᴛs  ɢᴇᴛ  ᴀᴜᴛᴏᴍ�
               [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_")]]
             ),
         )
-    elif query.data == "tiana_helpe":
+    elif query.data == "Surya_helpe":
         query.message.edit_text(
             text="""*× Sᴏ  Nᴏᴡ  Yᴏᴜ  Aʀᴇ  Aᴛ  Tʜᴇ  Eɴᴅ  Oғ  Bᴀsɪᴄ  Tᴏᴜʀ.  Bᴜᴛ  Tʜɪs  Is  Nᴏᴛ  Aʟʟ  I  Cᴀɴ  Dᴏ.
 
@@ -523,11 +528,11 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="➕ 𝘼𝙡𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ➕", callback_data="help_back")],
-                [InlineKeyboardButton(text="⬅️", callback_data="tiana_helpd"),
-                InlineKeyboardButton(text="𝙈𝙖𝙞𝙣 𝙈𝙚𝙣𝙪", callback_data="tiana_")]]
+                [InlineKeyboardButton(text="⬅️", callback_data="Surya_helpd"),
+                InlineKeyboardButton(text="𝙈𝙖𝙞𝙣 𝙈𝙚𝙣𝙪", callback_data="Surya_")]]
             ),
         )
-    elif query.data == "tiana_music":
+    elif query.data == "Surya_music":
         query.message.edit_text(
             text=f"""*Hᴇʀᴇ Iꜱ Tʜᴇ Hᴇʟᴘ 「Aꜱꜱɪꜱᴛᴀɴᴛ」 Mᴏᴅᴜʟᴇ:*
             
@@ -543,20 +548,20 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-               [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="tiana_vidb")],
-                [InlineKeyboardButton(text="𝙋𝙡𝙖𝙮 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musica"),
-                 InlineKeyboardButton(text="𝘽𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicc")],
-                [InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicb"),
-                 InlineKeyboardButton(text="𝙀𝙭𝙩𝙧𝙖 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicd")],
-                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_")]
+               [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="Surya_vidb")],
+                [InlineKeyboardButton(text="𝙋𝙡𝙖𝙮 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="Surya_musica"),
+                 InlineKeyboardButton(text="𝘽𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="Surya_musicc")],
+                [InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="Surya_musicb"),
+                 InlineKeyboardButton(text="𝙀𝙭𝙩𝙧𝙖 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="Surya_musicd")],
+                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_")]
                ]
             ),
         )
-    elif query.data == "tiana_musica":
+    elif query.data == "Surya_musica":
         query.message.edit_text(
             text="""✗*Here is the help for Play Commands*:
 
-*Note*: Tiana Music Bot works on a single merged commands for Music and Video
+*Note*: Surya Music Bot works on a single merged commands for Music and Video
 
 ✗ *Youtube and Telegram Files*:
 
@@ -564,10 +569,10 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
 - Stream Video or Music on Voice Chat by selecting inline Buttons you get
 
 
-✗ *Tiana Database Saved Playlists*:
+✗ *Surya Database Saved Playlists*:
 
 /createplaylist
-- Create Your Playlist on Tiana's Server with Custom Name
+- Create Your Playlist on Surya's Server with Custom Name
 
 /playlist 
 - Check Your Saved Playlist On Servers.
@@ -576,14 +581,14 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
 - Delete any saved music in your playlist
 
 /playplaylist 
-- Start playing Your Saved Playlist on Tiana Servers.""",
+- Start playing Your Saved Playlist on Surya Servers.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_music")]]
             ),
         )
-    elif query.data == "tiana_musicb":
+    elif query.data == "Surya_musicb":
         query.message.edit_text(
             text="""✗ *Here is the help for Admin Commands*:
 
@@ -605,7 +610,7 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
 
 ✗ *Authorised Users List*:
 
-Tiana has a additional feature for non-admin users who want to use admin commands
+Surya has a additional feature for non-admin users who want to use admin commands
 -Auth users can skip, pause, stop, resume Voice Chats even without Admin Rights.
 
 
@@ -620,16 +625,16 @@ Tiana has a additional feature for non-admin users who want to use admin command
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_music")]]
             ),
         )
-    elif query.data == "tiana_musicc":
+    elif query.data == "Surya_musicc":
         query.message.edit_text(
             text="""✗ *Here is the help for Bot Commands*:
 
 
 /start 
-- Start the Tiana Music Bot.
+- Start the Surya Music Bot.
 
 /help 
 - Get Commands Helper Menu with detailed explanations of commands.
@@ -638,13 +643,13 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - Get Settings dashboard of a group. You can manage Auth Users Mode. Commands Mode from here.
 
 /ping
-- Ping the Bot and check Ram, Cpu etc stats of Tiana.""",
+- Ping the Bot and check Ram, Cpu etc stats of Surya Robo.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_music")]]
             ),
         )
-    elif query.data == "tiana_musicd":
+    elif query.data == "Surya_musicd":
         query.message.edit_text(
             text=""" *Here is the help for Extra Commands*:
 
@@ -654,22 +659,22 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - Searches Lyrics for the particular Music on web.
 
 /sudolist 
-- Check Sudo Users of Tiana Music Bot
+- Check Sudo Users of Surya Music Bot
 
 /song [Track Name] or [YT Link]
-- Download any track from youtube in mp3 or mp4 formats via Tiana.
+- Download any track from youtube in mp3 or mp4 formats via Surya.
 
 /queue
 - Check Queue List of Music.
 
 /cleanmode [Enable|Disable]
-- When enabled, Tiana will be deleting her 3rd last message to keep your chat clean.""",
+- When enabled, Surya Robo will be deleting her 3rd last message to keep your chat clean.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="Surya_music")]]
             ),
         )
-    elif query.data == "tiana_about":
+    elif query.data == "Surya_about":
         query.message.edit_text(
             text=f"""{BOT_NAME} it's online since January 2022 and it's constantly updated!
             
@@ -694,7 +699,7 @@ Support
                 [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_")]]
             ),
         )
-    elif query.data == "tiana_support":
+    elif query.data == "Surya_support":
         query.message.edit_text(
             text=f"*{BOT_NAME} Support Chats*",
             parse_mode=ParseMode.MARKDOWN,
@@ -715,36 +720,31 @@ Support
                 ]
             ),
         )
-    elif query.data == "tiana_source":
+    elif query.data == "Surya_source":
         query.message.edit_text(
-            text="""*Tianabot is Now Open Source Bot Project.*
-
-*Click below Button to Get Source Code.*""",
+            text="""*Sorry, But Surya Robo is not open source.*
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", url="github.com/Prince-Botz/Tianabot"),                 
+                [                
                     InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_"),
-                 ]    
-                ]
+                 ]
             ),
         )
-    elif query.data == "tiana_vida":
+    elif query.data == "Surya_vida":
         query.message.reply_video(
-            TIANA_VIDA,
+            Surya_VIDA,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,           
         )
-    elif query.data == "tiana_vidb":
+    elif query.data == "Surya_vidb":
         query.message.reply_video(
-            TIANA_VIDB,
+            Surya_VIDB,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,           
         )
         
 @run_async
-def tiana_about_callback(update: Update, context: CallbackContext):
+def Surya_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "about_":
         query.message.edit_text(
@@ -754,15 +754,15 @@ def tiana_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                [
                  [
-                     InlineKeyboardButton(text="❗️ 𝘼𝙗𝙤𝙪𝙩", callback_data="tiana_about"),
-                     InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", callback_data="tiana_source"),
+                     InlineKeyboardButton(text="❗️ 𝘼𝙗𝙤𝙪𝙩", callback_data="Surya_about"),
+                     InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", callback_data="Surya_source"),
                  ],
                  [  
-                    InlineKeyboardButton(text="🫂 𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="tiana_support"),
+                    InlineKeyboardButton(text="🫂 𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="Surya_support"),
                     InlineKeyboardButton(text="👨‍✈️ 𝙊𝙬𝙣𝙚𝙧", url=f"t.me/{OWNER_USERNAME}"),
                  ],
                  [
-                     InlineKeyboardButton(text="𝙏𝙚𝙧𝙢𝙨 𝘼𝙣𝙙 𝘾𝙤𝙣𝙙𝙞𝙩𝙞𝙤𝙣𝙨❗️", callback_data="tiana_term"),
+                     InlineKeyboardButton(text="𝙏𝙚𝙧𝙢𝙨 𝘼𝙣𝙙 𝘾𝙤𝙣𝙙𝙞𝙩𝙞𝙤𝙣𝙨❗️", callback_data="Surya_term"),
                  ],
                  [
                      InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_back"),
@@ -838,7 +838,7 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="tiana_")]]
+                [[InlineKeyboardButton(text="Back", callback_data="Surya_")]]
             ),
         )
 
@@ -1083,8 +1083,8 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(tiana_callback_handler, pattern=r"tiana_")
-    Tiana_callback_handler = CallbackQueryHandler(tiana_about_callback, pattern=r"about_")
+    about_callback_handler = CallbackQueryHandler(Surya_callback_handler, pattern=r"Surya_")
+    Surya_callback_handler = CallbackQueryHandler(Surya_about_callback, pattern=r"about_")
   
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
@@ -1093,7 +1093,7 @@ def main():
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
-    dispatcher.add_handler(Tiana_callback_handler)
+    dispatcher.add_handler(Surya_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
