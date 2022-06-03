@@ -10,8 +10,8 @@
     <a href="https://t.me/SuryaBotsSupport"> Support Chat </a> 
 </p>
     
-# Tiana Bot
-#### Tiana is a Telegram group managment bot made using Telethon and Pyrogram which makes it modern and faster than most of the exisitng Telegram Chat Managers.
+# SuryaRobot
+#### Surya Robo is a Telegram group managment bot made using Telethon and Pyrogram which makes it modern and faster than most of the exisitng Telegram Chat Managers.
 <p align="center"><img src="https://telegra.ph/file/dbe37047e4c444452c5ef.jpg"></p>
 
 #### Tiana's features over other bots:
@@ -25,7 +25,7 @@
 - Smart Ai System
 - Easy To Use
 
-Can be found on Telegram as [@SuryaRo_bot]https://t.me/SuryaRo_bot)
+Can be found on Telegram as [@SuryaRo_bot](https://t.me/SuryaRo_bot)
 
 ## Deployment
 First Step!
