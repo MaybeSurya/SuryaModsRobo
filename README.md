@@ -68,7 +68,7 @@ Read [Docs](http://www.prince-botz.tk/2022/02/tiana-bot.html?m=1) for Detailed D
 
 
 ```console
-$ git clone https://github.com/SuryaModsYT/SuryaModsRobo)
+$ git clone https://github.com/SuryaModsYT/SuryaModsRobo
 $ cd SuryaModsRobo
 $ pip3 install -U -r requirements.txt
 $ cp sample.env .env
